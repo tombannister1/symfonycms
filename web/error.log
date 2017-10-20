@@ -1,0 +1,6 @@
+[20-Oct-2017 11:23:40 Europe/London] PHP Warning:  require(C:\Users\tomb\Desktop\www\cmsv1\web/../vendor/autoload.php): failed to open stream: No such file or directory in C:\Users\tomb\Desktop\www\cmsv1\web\app_dev.php on line 21
+[20-Oct-2017 11:23:40 Europe/London] PHP Stack trace:
+[20-Oct-2017 11:23:40 Europe/London] PHP   1. {main}() C:\Users\tomb\Desktop\www\cmsv1\web\app_dev.php:0
+[20-Oct-2017 11:23:40 Europe/London] PHP Fatal error:  require(): Failed opening required 'C:\Users\tomb\Desktop\www\cmsv1\web/../vendor/autoload.php' (include_path='.;C:\php\pear') in C:\Users\tomb\Desktop\www\cmsv1\web\app_dev.php on line 21
+[20-Oct-2017 11:23:40 Europe/London] PHP Stack trace:
+[20-Oct-2017 11:23:40 Europe/London] PHP   1. {main}() C:\Users\tomb\Desktop\www\cmsv1\web\app_dev.php:0
