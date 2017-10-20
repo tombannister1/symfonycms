@@ -1,3 +1,8 @@
+made_by_tom_notification:
+    resource: "@MadeByTomNotificationBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 made_by_tom_dashboard:
     resource: "@MadeByTomDashboardBundle/Controller/"
     type:     annotation
@@ -9,10 +14,6 @@ app:
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-
-fos_user_profile:
-    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
 
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"

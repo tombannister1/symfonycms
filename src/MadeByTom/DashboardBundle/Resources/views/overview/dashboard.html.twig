@@ -1,5 +1,7 @@
 {% extends '@MadeByTomCore/layout.html.twig' %}
 
 {% block body %}
-
+    {% block page_header_title %}
+        Hello, {{ app.user.firstName }} {{ app.user.lastName }}
+    {% endblock %}
 {% endblock %}
