@@ -39,6 +39,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    paths:
+        '%kernel.project_dir%/src/MadeByTom/CoreBundle/Resources/views': MadeByTomCore
 
 # Doctrine Configuration
 doctrine:
