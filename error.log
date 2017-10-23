@@ -1,0 +1,14 @@
+[23-Oct-2017 16:54:21 Europe/London] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "MadeByTomPageBundlePageBundle" from namespace "MadeByTomPageBundlePageBundle".
+Did you forget a "use" statement for another namespace? in C:\Users\tomb\Desktop\www\cmsv1\app\AppKernel.php:25
+Stack trace:
+#0 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\HttpKernel\Kernel.php(448): AppKernel->registerBundles()
+#1 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\HttpKernel\Kernel.php(114): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle\Console\Application.php(65): Symfony\Component\HttpKernel\Kernel->boot()
+#3 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\Console\Application.php(125): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\C in C:\Users\tomb\Desktop\www\cmsv1\app\AppKernel.php on line 25
+[23-Oct-2017 16:54:29 Europe/London] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "MadeByTomPageBundlePageBundle" from namespace "MadeByTomPageBundlePageBundle".
+Did you forget a "use" statement for another namespace? in C:\Users\tomb\Desktop\www\cmsv1\app\AppKernel.php:25
+Stack trace:
+#0 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\HttpKernel\Kernel.php(448): AppKernel->registerBundles()
+#1 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\HttpKernel\Kernel.php(114): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle\Console\Application.php(65): Symfony\Component\HttpKernel\Kernel->boot()
+#3 C:\Users\tomb\Desktop\www\cmsv1\vendor\symfony\symfony\src\Symfony\Component\Console\Application.php(125): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\C in C:\Users\tomb\Desktop\www\cmsv1\app\AppKernel.php on line 25

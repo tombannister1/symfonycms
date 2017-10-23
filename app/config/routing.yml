@@ -1,3 +1,8 @@
+page:
+    resource: "@PageBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 made_by_tom_notification:
     resource: "@MadeByTomNotificationBundle/Controller/"
     type:     annotation
