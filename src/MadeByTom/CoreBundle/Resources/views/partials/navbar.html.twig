@@ -10,55 +10,37 @@
         <a class="navbar-brand" href="{{ path('dashboard_home') }}">CMS</a>
     </div>
     <!-- /.navbar-header -->
-
     <ul class="nav navbar-top-links navbar-right">
+        <li><a href="{{  path('create_message') }}"><i class="fa fa-envelope"></i> Send Message</a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-messages">
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                      <em>Yesterday</em>
-                    </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                      <em>Yesterday</em>
-                    </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                      <em>Yesterday</em>
-                    </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>Read All Messages</strong>
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </li>
+                {% if unreadMessages %}
+                    {% for unreadMessage in unreadMessages %}
+                        <li>
+                            <a href="{{  path('view_message_by_id',{'id':unreadMessage.id}) }}">
+                                <div>
+                                    <strong>{{ unreadMessage.sender.firstName }} {{ unreadMessage.sender.lastName }}</strong>
+                                    <span class="pull-right text-muted">
+                                    <em>{{ unreadMessage.createdAt|ago }}</em>
+                                </span>
+                                </div>
+                                <div>{{ unreadMessage.messageContent }}</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                    {% endfor %}
+                    <li>
+                        <a class="text-center" href="{{ path('view_all_messages') }}">
+                            <strong>Read All Messages</strong>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li><p>You have no new messages!</p></li>
+                {% endif %}
             </ul>
             <!-- /.dropdown-messages -->
         </li>

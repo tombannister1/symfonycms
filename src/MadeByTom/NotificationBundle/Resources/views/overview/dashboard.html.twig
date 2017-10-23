@@ -1,0 +1,41 @@
+{% extends '@MadeByTomCore/layout.html.twig' %}
+
+{% block page_header_title %}
+    Viewing Messages
+{% endblock %}
+
+{% block content_area %}
+    <table id="recordTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Message Content</th>
+                <th>Read?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in allMessages %}
+                <tr>
+                    <td>{{ message.sender.firstName }} {{ message.sender.lastName }}</td>
+                    <td>{{ message.messageContent }}</td>
+                    <td>{% if message.readStatus == false %} <i class="fa fa-times"></i> {% else %}<i class="fa fa-check"></i>{% endif %}</td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="{{ path('delete_message',{'id':message.id}) }}"><i class="fa fa-trash"></i></a></li>
+                            <li><a href="{{ path('view_message_by_id',{'id': message.id}) }}"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            $('#recordTable').DataTable();
+        });
+    </script>
+{% endblock %}

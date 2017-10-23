@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20171020153524 extends AbstractMigration
+class Version20171023145959 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -18,7 +18,7 @@ class Version20171020153524 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE messages CHANGE message_content message_content LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE messages CHANGE `read` read_status TINYINT(1) NOT NULL');
     }
 
     /**
@@ -29,6 +29,6 @@ class Version20171020153524 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE messages CHANGE message_content message_content VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci');
+        $this->addSql('ALTER TABLE messages CHANGE read_status `read` TINYINT(1) NOT NULL');
     }
 }

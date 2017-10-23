@@ -13,13 +13,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/timeline.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="/css/admin.css">
         <script src="https://use.fontawesome.com/d65abc9363.js"></script>
     </head>
     <body>
         <div id="wrapper">
 
-            {% include '@MadeByTomCore/partials/navbar.html.twig' %}
+            {{ render(controller(
+                'MadeByTomNotificationBundle:Notification:getUnreadMessages',
+                { 'max': 3 }
+            )) }}
 
             {% include '@MadeByTomCore/partials/sidebar.html.twig' %}
 
@@ -29,8 +33,10 @@
                         <h1 class="page-header">{% block page_header_title %}{% endblock %}</h1>
                     </div>
                 </div>
-                {% block content_area %}
-                {%  endblock  %}
+                <div class="container">
+                    {% block content_area %}
+                    {%  endblock  %}
+                </div>
             </div>
 
         </div>
@@ -40,6 +46,8 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/js/timeline-min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
         <script type="text/javascript" src="/js/admin.js"></script>
         {% block javascripts %}{% endblock %}
     </body>

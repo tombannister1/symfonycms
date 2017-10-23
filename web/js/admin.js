@@ -2,6 +2,14 @@ $(function() {
 
     $('#side-menu').metisMenu();
 
+    var dd=1;
+    $(".editor").each(function(){
+
+        $(this).attr("id","editor"+dd);
+
+        CKEDITOR.replace( 'editor'+dd);
+        dd=dd+1;
+    });
 });
 
 // Loads the correct sidebar on window load, collapses the sidebar on window resize.
@@ -32,4 +40,5 @@ $(function() {
     if (element.is('li')) {
         element.addClass('active');
     }
+
 });

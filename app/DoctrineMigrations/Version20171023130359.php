@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20171020145742 extends AbstractMigration
+class Version20171023130359 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -18,7 +18,7 @@ class Version20171020145742 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE fos_user ADD first_name VARCHAR(255) NOT NULL, ADD last_name VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE messages ADD active TINYINT(1) NOT NULL, CHANGE read_at read_at DATETIME DEFAULT NULL');
     }
 
     /**
@@ -29,6 +29,6 @@ class Version20171020145742 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE fos_user DROP first_name, DROP last_name');
+        $this->addSql('ALTER TABLE messages DROP active, CHANGE read_at read_at DATETIME NOT NULL');
     }
 }

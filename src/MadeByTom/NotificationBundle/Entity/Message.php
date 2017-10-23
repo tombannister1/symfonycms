@@ -1,11 +1,12 @@
 <?php
 
 namespace MadeByTom\NotificationBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MadeByTom\NotificationBundle\Repository\MessageRepository")
  * @ORM\Table(name="messages")
  */
 class Message
@@ -14,14 +15,13 @@ class Message
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Entity(repositoryClass="MadeByTom\NotificationBundle\Repository\MessageRepository")
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="MadeByTom\CoreBundle\Entity\User", inversedBy="messages")
      */
-    protected $senderId;
+    protected $sender;
 
     /**
      * @ORM\Column(type="integer")
@@ -39,14 +39,35 @@ class Message
     protected $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      */
     protected $readAt;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $read;
+    protected $active;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $readStatus;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
@@ -131,17 +152,66 @@ class Message
     /**
      * @return mixed
      */
-    public function getRead()
+    public function getReadStatus()
     {
-        return $this->read;
+        return $this->readStatus;
     }
 
     /**
      * @param mixed $read
      */
-    public function setRead($read)
+    public function setRead($readStatus)
     {
-        $this->read = $read;
+        $this->readStatus = $readStatus;
     }
+
+    /**
+     * @return user
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param user $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSender()
+    {
+        return $this->sender;
+    }
+
+    /**
+     * @param mixed $sender
+     */
+    public function setSender($sender)
+    {
+        $this->sender = $sender;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param mixed $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    }
+
 
 }

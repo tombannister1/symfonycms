@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new MadeByTom\DashboardBundle\MadeByTomDashboardBundle(),
             new MadeByTom\NotificationBundle\MadeByTomNotificationBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
