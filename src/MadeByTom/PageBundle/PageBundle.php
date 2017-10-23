@@ -1,6 +1,6 @@
 <?php
 
-namespace PageBundle;
+namespace MadeByTom\PageBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

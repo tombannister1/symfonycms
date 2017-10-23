@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new MadeByTom\DashboardBundle\MadeByTomDashboardBundle(),
             new MadeByTom\NotificationBundle\MadeByTomNotificationBundle(),
             new Knp\Bundle\TimeBundle\KnpTimeBundle(),
-            new PageBundle\PageBundle(),
+            new MadeByTom\PageBundle\PageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
